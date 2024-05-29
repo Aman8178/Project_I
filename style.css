@@ -1,0 +1,113 @@
+/* style.css */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+.video-background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+}
+
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    color: white;
+    z-index: 1;
+    flex-direction: column;
+}
+
+.countdown, .complete {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+}
+
+.countdown-title, .complete-title, .complete-info {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.countdown ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.countdown ul li {
+    font-size: 2em;
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-weight: bold;
+    color: #00ffcc;
+}
+
+.countdown ul li span {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+#complete {
+    display: none;
+}
+
+.show-countdown .countdown {
+    display: block;
+}
+
+.show-complete .complete {
+    display: block;
+}
+
+.show-complete .countdown {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .countdown-title, .complete-title, .complete-info {
+        font-size: 1.5em;
+    }
+
+    .countdown ul li {
+        font-size: 1.2em;
+        margin: 5px 10px;
+    }
+
+    .countdown ul li span {
+        font-size: 2em;
+    }
+
+    .countdown, .complete {
+        padding: 10px;
+    }
+}
